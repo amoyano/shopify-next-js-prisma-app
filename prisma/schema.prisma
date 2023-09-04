@@ -20,3 +20,8 @@ model session {
   content String? @db.Text
   shop    String?
 }
+
+model product {
+  id          String   @id @default(uuid())
+  content     String @default("")
+}

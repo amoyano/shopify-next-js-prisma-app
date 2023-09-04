@@ -16,6 +16,8 @@ const verifyProxy = async (req, res, next) => {
     .update(queryURI, "utf-8")
     .digest("hex");
 
+    res.setHeader("ngrok-skip-browser-warning", "true");
+    
   if (calculatedSignature === signature) {
     req.user_shop = req.query.shop; //myshopify domain
     await next();
