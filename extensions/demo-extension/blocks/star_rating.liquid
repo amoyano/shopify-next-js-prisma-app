@@ -1,0 +1,15 @@
+<script>
+  async function getData() {
+    const response = await fetch('/apps/next-proxy/json');
+    const data = await response.json();
+    console.log(`----> ${data.content}`);
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Proxy Call",
+  "target": "section"
+}
+{% endschema %}
+
